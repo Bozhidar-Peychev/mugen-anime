@@ -1,11 +1,21 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import TableTemp from "./TableTemplate";
-import AnimeList from "./animeList.json";
 import CssBaseline from "@material-ui/core/CssBaseline";
-
+import axios from "axios";
 function Categories() {
+  const [animelist, setAnimelist] = useState([]);
+  useEffect(() => {
+    axios
+      .get("http://localhost:3001")
+      .then((response) => setAnimelist(response.data));
+  }, []);
+
   const columns = React.useMemo(
     () => [
+      {
+        Header: "MAL ID",
+        accessor: "series_animedb_id",
+      },
       {
         Header: "Title",
         accessor: "series_title",
@@ -18,14 +28,10 @@ function Categories() {
         Header: "Episodes",
         accessor: "series_episodes",
       },
-      {
-        Header: "MAL ID",
-        accessor: "series_animedb_id",
-      },
     ],
     []
   );
-  const data = React.useMemo(() => AnimeList, []);
+  const data = React.useMemo(() => animelist, [animelist]);
 
   return (
     <div>
