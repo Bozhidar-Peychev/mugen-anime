@@ -7,9 +7,10 @@ import {
   TableRow,
   TablePagination,
 } from "@material-ui/core";
-// import ArrowDownwardIcon from "@material-ui/icons/ArrowDownward";
-// import ArrowUpwardIcon from "@material-ui/icons/ArrowUpward";
+import ArrowDownwardIcon from "@material-ui/icons/ArrowDownward";
+import ArrowUpwardIcon from "@material-ui/icons/ArrowUpward";
 import { useTable, useSortBy } from "react-table";
+
 
 function TableTemp({ columns, data }: any) {
   const { getTableProps, headerGroups, rows, prepareRow } = useTable(
@@ -39,21 +40,19 @@ function TableTemp({ columns, data }: any) {
           <TableRow {...headerGroup.getHeaderGroupProps()}>
             {headerGroup.headers.map((column) => (
               <TableCell
-                {
-                  ...column.getHeaderProps(/*column.getSortByToggleProps()*/)
-                }>
+                {...column.getHeaderProps(column.getSortByToggleProps())}>
                 {column.render("Header")}
-                {/* <span>
+                <span>
                   {column.isSorted ? (
                     column.isSortedDesc ? (
-                      <ArrowDownwardIcon />
+                      <ArrowDownwardIcon fontSize="small" />
                     ) : (
-                      <ArrowUpwardIcon />
+                      <ArrowUpwardIcon fontSize="small" />
                     )
                   ) : (
                     ""
                   )}
-                </span> */}
+                </span>
               </TableCell>
             ))}
           </TableRow>
