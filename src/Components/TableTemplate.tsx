@@ -42,6 +42,7 @@ const useStyles2 = makeStyles((theme: Theme) =>
   createStyles({
     table: {
       minWidth: 550,
+      marginTop: 10,
     },
   })
 );

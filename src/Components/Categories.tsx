@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import TableTemp from "./TableTemplate";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import axios from "axios";
-function Categories() {
+export default function Categories() {
   const [animelist, setAnimelist] = useState([]);
   useEffect(() => {
     axios
@@ -40,5 +40,3 @@ function Categories() {
     </div>
   );
 }
-
-export default Categories;

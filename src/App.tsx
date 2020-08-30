@@ -14,7 +14,8 @@ import {
 
 import HomeIcon from "@material-ui/icons/Home";
 import CategoryIcon from "@material-ui/icons/Category";
-
+import InputIcon from "@material-ui/icons/Input";
+import LockOpenRoundedIcon from "@material-ui/icons/LockOpenRounded";
 const useStyles = makeStyles((theme) => ({
   drawerPaper: { width: "inherit" },
   link: {
@@ -52,6 +53,22 @@ function App() {
                 <ListItemText primary={"Categories"} />
               </ListItem>
             </Link>
+            <Link to="/Login" className={classes.link}>
+              <ListItem button>
+                <ListItemIcon>
+                  <LockOpenRoundedIcon />
+                </ListItemIcon>
+                <ListItemText primary={"Login"} />
+              </ListItem>
+            </Link>
+            <Link to="/Register" className={classes.link}>
+              <ListItem button>
+                <ListItemIcon>
+                  <InputIcon />
+                </ListItemIcon>
+                <ListItemText primary={"Register"} />
+              </ListItem>
+            </Link>
           </List>
         </Drawer>
         <Switch>
@@ -67,7 +84,7 @@ function App() {
               <Typography variant="h3" gutterBottom>
                 Categories
               </Typography>
-              <Categories/>
+              <Categories />
             </Container>
           </Route>
         </Switch>
