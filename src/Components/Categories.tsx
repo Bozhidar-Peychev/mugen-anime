@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import TableTemp from "./TableTemplate";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import axios from "axios";
-export default function Categories() {
+
+export default function Categories(props: any) {
   const [animelist, setAnimelist] = useState([]);
   useEffect(() => {
     axios
