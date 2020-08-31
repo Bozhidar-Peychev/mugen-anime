@@ -41,6 +41,7 @@ const useStyles = makeStyles((theme) => ({
     marginRight: "auto",
     marginLeft: "auto",
     padding: "20px",
+    margin: "20px",
   },
 }));
 export default function Login(props: any) {
@@ -51,7 +52,6 @@ export default function Login(props: any) {
   const classes = useStyles();
   return (
     <div className={classes.root}>
-      <h1>Sign Up</h1>
       <Formik
         initialValues={initialValues}
         onSubmit={handleSubmit}
@@ -74,7 +74,7 @@ export default function Login(props: any) {
                 disabled={!dirty || !isValid}
                 type="submit"
               >
-                Submit
+                Login
               </Button>
             </Form>
           );

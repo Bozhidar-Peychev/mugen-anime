@@ -76,6 +76,7 @@ const useStyles = makeStyles((theme) => ({
     marginRight: "auto",
     marginLeft: "auto",
     padding: "20px",
+    margin: "20px",
   },
 }));
 export default function Register(props: any) {
@@ -86,7 +87,6 @@ export default function Register(props: any) {
   const classes = useStyles();
   return (
     <div className={classes.root}>
-      <h1>Sign Up</h1>
       <Formik
         initialValues={initialValues}
         onSubmit={handleSubmit}
@@ -122,7 +122,7 @@ export default function Register(props: any) {
                 disabled={!dirty || !isValid}
                 type="submit"
               >
-                Submit
+                Register
               </Button>
             </Form>
           );

@@ -32,7 +32,6 @@ import matchSorter from "match-sorter";
 const useStyles1 = makeStyles((theme: Theme) =>
   createStyles({
     root: {
-
       flexShrink: 0,
       marginLeft: theme.spacing(2.5),
     },
@@ -42,11 +41,15 @@ const useStyles2 = makeStyles((theme: Theme) =>
   createStyles({
     table: {
       minWidth: 550,
-      marginTop: 10,
+      margin: "50px",
+      border: "solid",
+      borderRadius: "20px",
+      padding: "20px",
+      backgroundColor: "white",
     },
   })
 );
-function GlobalFilter({globalFilter, setGlobalFilter }: any) {
+function GlobalFilter({ globalFilter, setGlobalFilter }: any) {
   const [value, setValue] = React.useState(globalFilter);
   const onChange = useAsyncDebounce((value) => {
     setGlobalFilter(value || undefined);
@@ -119,13 +122,15 @@ function TablePaginationActions(props: TablePaginationActionsProps) {
       <IconButton
         onClick={handleFirstPageButtonClick}
         disabled={page === 0}
-        aria-label="first page">
+        aria-label="first page"
+      >
         {theme.direction === "rtl" ? <LastPage /> : <FirstPage />}
       </IconButton>
       <IconButton
         onClick={handleBackButtonClick}
         disabled={page === 0}
-        aria-label="previous page">
+        aria-label="previous page"
+      >
         {theme.direction === "rtl" ? (
           <KeyboardArrowRightIcon />
         ) : (
@@ -135,7 +140,8 @@ function TablePaginationActions(props: TablePaginationActionsProps) {
       <IconButton
         onClick={handleNextButtonClick}
         disabled={page >= Math.ceil(count / rowsPerPage) - 1}
-        aria-label="next page">
+        aria-label="next page"
+      >
         {theme.direction === "rtl" ? (
           <KeyboardArrowLeftIcon />
         ) : (
@@ -145,7 +151,8 @@ function TablePaginationActions(props: TablePaginationActionsProps) {
       <IconButton
         onClick={handleLastPageButtonClick}
         disabled={page >= Math.ceil(count / rowsPerPage) - 1}
-        aria-label="last page">
+        aria-label="last page"
+      >
         {theme.direction === "rtl" ? <FirstPage /> : <LastPage />}
       </IconButton>
     </TableRow>
@@ -221,7 +228,8 @@ function TableTemp({ columns, data }: any) {
             <TableRow {...headerGroup.getHeaderGroupProps()}>
               {headerGroup.headers.map((column) => (
                 <TableCell
-                  {...column.getHeaderProps(column.getSortByToggleProps())}>
+                  {...column.getHeaderProps(column.getSortByToggleProps())}
+                >
                   {column.render("Header")}
                   <span>
                     {column.isSorted ? (
