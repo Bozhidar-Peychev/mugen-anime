@@ -42,7 +42,7 @@ const useStyles2 = makeStyles((theme: Theme) =>
     table: {
       minWidth: 550,
       margin: "50px",
-      border: "solid",
+      border: "solid, white",
       borderRadius: "20px",
       padding: "20px",
       backgroundColor: "white",
