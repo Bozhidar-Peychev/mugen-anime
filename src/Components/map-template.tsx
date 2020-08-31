@@ -1,11 +1,12 @@
 import React, { Component } from "react";
-import OlMap from "ol/map";
+import OlMap from "ol/Map";
 import OlView from "ol/View";
-import OlLayerTile from "ol/layer/tile";
-import OlSourceOSM from "ol/source/osm";
+import OlLayerTile from "ol/layer/Tile";
+import OlSourceOSM from "ol/source/OSM";
 
 class PublicMap extends Component {
   olmap: any;
+
   mapState() {
     return { center: [0, 0], zoom: 1 };
   }
@@ -56,8 +57,24 @@ class PublicMap extends Component {
   render() {
     this.updateMap(); // Update map on render?
     return (
-      <div id="map" style={{ width: "100%", height: "360px" }}>
-        <button onClick={(_e) => this.userAction()}>setState on click</button>
+      <div
+        id="map"
+        style={{
+          display: "block",
+          marginRight: "auto",
+          marginLeft: "auto",
+          marginTop: "20px",
+          marginBottom: "20px",
+          width: "60%",
+          height: "360px",
+        }}
+      >
+        <button
+          onClick={(_e) => this.userAction()}
+          style={{ marginBottom: "10px" }}
+        >
+          setState on click
+        </button>
       </div>
     );
   }
