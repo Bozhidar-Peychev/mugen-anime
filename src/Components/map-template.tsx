@@ -67,12 +67,10 @@ class PublicMap extends Component {
           marginBottom: "20px",
           width: "60%",
           height: "360px",
-        }}
-      >
+        }}>
         <button
           onClick={(_e) => this.userAction()}
-          style={{ marginBottom: "10px" }}
-        >
+          style={{ marginBottom: "10px" }}>
           setState on click
         </button>
       </div>

@@ -90,8 +90,7 @@ export default function Register(props: any) {
       <Formik
         initialValues={initialValues}
         onSubmit={handleSubmit}
-        validationSchema={SignupSchema}
-      >
+        validationSchema={SignupSchema}>
         {({ dirty, isValid }) => {
           return (
             <Form>
@@ -120,8 +119,7 @@ export default function Register(props: any) {
                 variant="contained"
                 color="primary"
                 disabled={!dirty || !isValid}
-                type="submit"
-              >
+                type="submit">
                 Register
               </Button>
             </Form>
