@@ -1,7 +1,7 @@
 import React from "react";
 
-const Categories = (props: any) => {
-  return <div>This is the Categories page</div>;
+const Info = (props: any) => {
+  return <div>This is the Info page</div>;
 };
 
-export default Categories;
+export default Info;

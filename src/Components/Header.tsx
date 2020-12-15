@@ -26,8 +26,15 @@ const useStyles = makeStyles((theme) => ({
   headerOptions: {
     display: "flex",
     flex: 1,
-    justifyContent: "space-evenly",
+    justifyContent: "space-between",
   },
+  headerButtons: {
+    display: "flex-end",
+    "& button": {
+      marginRight: "10px",
+    },
+  },
+
   navBar: {
     backgroundColor: "black",
     color: "white",
@@ -61,16 +68,8 @@ const Header = (props: any) => {
       pageURL: "/",
     },
     {
-      menuTitle: "Categories",
-      pageURL: "/categories",
-    },
-    {
-      menuTitle: "Register",
-      pageURL: "/register",
-    },
-    {
-      menuTitle: "Login",
-      pageURL: "/login",
+      menuTitle: "Books",
+      pageURL: "/books",
     },
   ];
 
@@ -78,73 +77,63 @@ const Header = (props: any) => {
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar className={classes.navBar}>
-          <Typography variant="h6" className={classes.title}>
-            Mugen Anime
-          </Typography>
-          {isMobile ? (
-            <>
-              <IconButton
-                edge="start"
-                className={classes.menuButton}
-                color="inherit"
-                aria-label="menu"
-                onClick={handleMenu}
-              >
-                <MenuIcon />
-              </IconButton>
-              <Menu
-                id="menu-appbar"
-                anchorEl={anchorEl}
-                anchorOrigin={{
-                  vertical: "top",
-                  horizontal: "right",
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: "top",
-                  horizontal: "right",
-                }}
-                open={open}
-                onClose={() => setAnchorEl(null)}
-              >
-                {menuItems.map((menuItem) => {
-                  const { menuTitle, pageURL } = menuItem;
-                  return (
-                    <MenuItem onClick={() => handleMenuClick(pageURL)}>
-                      {menuTitle}
-                    </MenuItem>
-                  );
-                })}
-              </Menu>
-            </>
-          ) : (
-            <div className={classes.headerOptions}>
-              <Button
-                variant="contained"
-                onClick={() => handleButtonClick("/")}
-              >
-                HOME
-              </Button>
-              <Button
-                variant="contained"
-                onClick={() => handleButtonClick("/categories")}
-              >
-                Categories
-              </Button>
-              <Button
-                variant="contained"
-                onClick={() => handleButtonClick("/register")}
-              >
-                Register
-              </Button>
-              <Button
-                variant="contained"
-                onClick={() => handleButtonClick("/login")}
-              >
-                Login
-              </Button>
-            </div>
-          )}
+          <div className={classes.headerOptions}>
+            <Typography variant="h6" className={classes.title}>
+              Book History
+            </Typography>
+            {isMobile ? (
+              <>
+                <IconButton
+                  edge="start"
+                  className={classes.menuButton}
+                  color="inherit"
+                  aria-label="menu"
+                  onClick={handleMenu}
+                >
+                  <MenuIcon />
+                </IconButton>
+                <Menu
+                  id="menu-appbar"
+                  anchorEl={anchorEl}
+                  anchorOrigin={{
+                    vertical: "top",
+                    horizontal: "right",
+                  }}
+                  keepMounted
+                  transformOrigin={{
+                    vertical: "top",
+                    horizontal: "right",
+                  }}
+                  open={open}
+                  onClose={() => setAnchorEl(null)}
+                >
+                  {menuItems.map((menuItem) => {
+                    const { menuTitle, pageURL } = menuItem;
+                    return (
+                      <MenuItem onClick={() => handleMenuClick(pageURL)}>
+                        {menuTitle}
+                      </MenuItem>
+                    );
+                  })}
+                </Menu>
+              </>
+            ) : (
+              <div className={classes.headerButtons}>
+                <Button
+                  variant="contained"
+                  onClick={() => handleButtonClick("/")}
+                >
+                  HOME
+                </Button>
+                <Button
+                  variant="contained"
+                  onClick={() => handleButtonClick("/books")}
+                >
+                  Books
+                </Button>
+              </div>
+            )}
+          </div>
         </Toolbar>
       </AppBar>
     </div>

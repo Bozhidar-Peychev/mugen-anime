@@ -1,6 +1,6 @@
 import React from "react";
 import Home from "./Components/Home";
-import Categories from "./Components/Categories";
+import Books from "./Components/Books";
 import Header from "./Components/Header";
 import Register from "./Components/Register";
 import Login from "./Components/Login";
@@ -12,11 +12,7 @@ export default function App() {
       <Header />
       <Switch>
         <Route exact path="/" render={(props) => <Home {...props} />} />
-        <Route
-          exact
-          path="/Categories"
-          render={(props) => <Categories {...props} />}
-        />
+        <Route exact path="/Books" render={() => <Books />} />
         <Route
           exact
           path="/Register"

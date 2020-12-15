@@ -3,7 +3,7 @@ import TableTemp from "./Table-template";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import axios from "axios";
 
-export default function Categories(props: any) {
+export default function Books() {
   const [animelist, setAnimelist] = useState([]);
   useEffect(() => {
     axios
@@ -14,20 +14,24 @@ export default function Categories(props: any) {
   const columns = React.useMemo(
     () => [
       {
-        Header: "MAL ID",
-        accessor: "series_animedb_id",
-      },
-      {
         Header: "Title",
-        accessor: "series_title",
+        accessor: "title",
       },
       {
-        Header: "Type",
-        accessor: "series_type",
+        Header: "Author",
+        accessor: "author",
       },
       {
-        Header: "Episodes",
-        accessor: "series_episodes",
+        Header: "Genre",
+        accessor: "genre",
+      },
+      {
+        Header: "Pages",
+        accessor: "height",
+      },
+      {
+        Header: "Publisher",
+        accessor: "publisher",
       },
     ],
     []
